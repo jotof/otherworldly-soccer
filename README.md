@@ -1,7 +1,7 @@
 # otherworldly-soccer
 
-> Simulator of the otherworldly soccer
-  See [The otherworldly soccer chronicle](https://kakuyomu.jp/works/1177354054885766776/episodes/1177354054885807309)
+Simulator of the otherworldly soccer  
+See [The otherworldly soccer chronicle](https://kakuyomu.jp/works/1177354054885766776/episodes/1177354054885807309)
 
 ## Build Setup
 
@@ -22,7 +22,7 @@ $ npm run generate
 
 ## Contributing
 
-> In general, we follow the "fork-and-pull" Git workflow.
+In general, we follow the "fork-and-pull" Git workflow.
 
 1. Fork the repo on GitHub
 2. Clone the project to your own machine
