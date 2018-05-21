@@ -1,8 +1,7 @@
 # otherworldly-soccer
 
 > Simulator of the otherworldly soccer
-
-> See [The otherworldly soccer chronicle](https://kakuyomu.jp/works/1177354054885766776/episodes/1177354054885807309)
+  See [The otherworldly soccer chronicle](https://kakuyomu.jp/works/1177354054885766776/episodes/1177354054885807309)
 
 ## Build Setup
 
