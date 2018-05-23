@@ -19,6 +19,7 @@ export default {
   }
   , mounted() {
     let board_id = this.$route.params.board_id;
+    console.log(board_id);
     this.board_id = board_id;
     this.database = db(); 
     let board = this.database.ref('boards/' + board_id);

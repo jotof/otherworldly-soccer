@@ -1,4 +1,6 @@
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import "firebase/database";
+
 const config = {
   apiKey: "AIzaSyCYKxIPAlgLOw6n7NFN3Wt_2kclOLQpDUI",
   authDomain: "otherworldly-soccer.firebaseapp.com",
