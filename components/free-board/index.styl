@@ -1,6 +1,50 @@
-.board
+cell-size = 50px
+border-width = 1px
+
+.board-wrapper
   position relative
+  width (cell-size * 13) px
+  height (cell-size * 15) px
+  padding cell-size
+
+.board
+  position absolute
   display block
-  width 900px
-  height 1100px
-  background-color gray
+  width (cell-size * 9)px
+  height (cell-size * 13)px
+  background-color transparent
+  z-index 2
+
+.board-grid
+  position absolute
+  width ((cell-size * 9) + (border-width * 2)) px
+  height (cell-size * 13)px
+  border 1px solid
+  z-index 2
+  &-row
+    height cell-size px
+    display block
+    border-bottom border-width solid
+    &.bottom-bold
+      border-bottom-width (border-width * 5)px
+  &-cell
+    display inline-block
+    width cell-size px
+    height cell-size px
+    border-left border-width solid
+    &.start
+      border-left 0px
+    &.alone
+      border-right border-width solid
+    &.bold
+      border-width (border-width * 5)px
+      &-left
+        border-left-width (border-width * 5) px
+      &-right
+        border-right (border-width * 4)px solid
+      &-top
+        border-top (border-width * 4)px solid
+      &-bottom
+        border-bottom (border-width * 4)px solid
+    &.space
+      border none

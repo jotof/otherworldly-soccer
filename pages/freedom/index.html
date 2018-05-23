@@ -1,8 +1,8 @@
-<div>
-  <div class="container">
-    <FreeBoard></FreeBoard>
+<div class="freedom">
+  <div class="freedom-container">
+    <FreeBoard v-on:change="applyBoard($event)" v-bind:pieces="pieces" v-if="pieces"></FreeBoard>
   </div>
-  <div class="aside">
-    <chat></chat>
+  <div class="freedom-console">
+    <Console v-on:send=""></Console>
   </div>
 </div> 

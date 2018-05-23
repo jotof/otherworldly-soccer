@@ -1,6 +1,18 @@
+@import '../free-board/index.styl';
+
 .piece
   position absolute
-  margin 10px;
-  width 90px
-  height 90px
-  background-color red
+  margin (cell-size * 0.1)px
+  width (cell-size * 0.9)px
+  height (cell-size * 0.9)px
+  font-size (cell-size / 2)px
+  text-align center
+  font-weight bold
+
+  border 2px solid
+  border-radius 50% 50% 10% 10%
+  &.circle
+    border-radius 100%
+  &.second
+    border-radius 10% 10% 50% 50%
+

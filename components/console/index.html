@@ -1,0 +1,15 @@
+<div class="console">
+  <div class="logs">
+    <p v-for="log in logs"><span>{{ log }}</span></p>
+  </div>
+
+  <div class="form">
+    <input type="text" class="form-name" v-model="name"
+      placeholder="名無しさん"
+    >
+    <input type="text" class="form-text" v-model="message"
+      @keydown.enter="sendChat()">
+    <button type="button" class="form-button"
+      @click="sendChat()">送信</button>
+  </div>
+</div>

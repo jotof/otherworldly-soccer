@@ -1,3 +1,9 @@
-<div class="piece">
-  
+<div class="piece"
+  draggable="true"
+  v-bind:class="{ circle : is_ball, second : is_second }"
+  v-bind:style="{ 'top' : top, 'left' : left, 'z-index' : z }"
+  @mousedown="startDrag($event)"
+  @touchstart="startDrag($event)"
+  @mouseleave="stopDrag($event)" v-if="x">
+  {{ piece_name }}
 </div>

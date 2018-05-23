@@ -1,2 +1,174 @@
-<div class="board" @click.left="clicked($event)">
+<div class="board-wrapper">
+  <free-board-grid></free-board-grid>
+  <div class="board">
+    <piece
+      v-bind:name="first.goal_keeper.name" v-bind:hand="first.goal_keeper.hand"
+      v-bind:x="first.goal_keeper.position.x"
+      v-bind:y="first.goal_keeper.position.y"
+      v-bind:z="first.goal_keeper.position.z"
+      v-on:moved="updatePosition($event, first.goal_keeper)"
+    ></piece>
+    <piece
+      v-bind:name="first.rook.name" v-bind:hand="first.rook.hand"
+      v-bind:x="first.rook.position.x"
+      v-bind:y="first.rook.position.y"
+      v-bind:z="first.rook.position.z"
+      v-on:moved="updatePosition($event, first.rook)"
+    ></piece>
+
+    <piece
+      v-bind:name="first.bishop.name" v-bind:hand="first.bishop.hand"
+      v-bind:x="first.bishop.position.x"
+      v-bind:y="first.bishop.position.y"
+      v-bind:z="first.bishop.position.z"
+      v-on:moved="updatePosition($event, first.bishop)"
+    ></piece>
+
+    <piece
+      v-bind:name="first.knights[0].name" v-bind:hand="first.knights[0].hand"
+      v-bind:x="first.knights[0].position.x"
+      v-bind:y="first.knights[0].position.y"
+      v-bind:z="first.knights[0].position.z"
+      v-on:moved="updatePosition($event, first.knights[0])"
+    ></piece>
+    <piece
+      v-bind:name="first.knights[1].name" v-bind:hand="first.knights[1].hand"
+      v-bind:x="first.knights[1].position.x"
+      v-bind:y="first.knights[1].position.y"
+      v-bind:z="first.knights[1].position.z"
+      v-on:moved="updatePosition($event, first.knights[1])"
+    ></piece>
+
+    <piece
+      v-bind:name="first.pawns[0].name" v-bind:hand="first.pawns[0].hand"
+      v-bind:x="first.pawns[0].position.x"
+      v-bind:y="first.pawns[0].position.y"
+      v-bind:z="first.pawns[0].position.z"
+      v-on:moved="updatePosition($event, first.pawns[0])"
+    ></piece>
+    <piece
+      v-bind:name="first.pawns[1].name" v-bind:hand="first.pawns[1].hand"
+      v-bind:x="first.pawns[1].position.x"
+      v-bind:y="first.pawns[1].position.y"
+      v-bind:z="first.pawns[1].position.z"
+      v-on:moved="updatePosition($event, first.pawns[1])"
+    ></piece>
+    <piece
+      v-bind:name="first.pawns[2].name" v-bind:hand="first.pawns[2].hand"
+      v-bind:x="first.pawns[2].position.x"
+      v-bind:y="first.pawns[2].position.y"
+      v-bind:z="first.pawns[2].position.z"
+      v-on:moved="updatePosition($event, first.pawns[2])"
+    ></piece>
+    <piece
+      v-bind:name="first.pawns[3].name" v-bind:hand="first.pawns[3].hand"
+      v-bind:x="first.pawns[3].position.x"
+      v-bind:y="first.pawns[3].position.y"
+      v-bind:z="first.pawns[3].position.z"
+      v-on:moved="updatePosition($event, first.pawns[3])"
+    ></piece>
+    <piece
+      v-bind:name="first.pawns[4].name" v-bind:hand="first.pawns[4].hand"
+      v-bind:x="first.pawns[4].position.x"
+      v-bind:y="first.pawns[4].position.y"
+      v-bind:z="first.pawns[4].position.z"
+      v-on:moved="updatePosition($event, first.pawns[4])"
+    ></piece>
+    <piece
+      v-bind:name="first.pawns[5].name" v-bind:hand="first.pawns[5].hand"
+      v-bind:x="first.pawns[5].position.x"
+      v-bind:y="first.pawns[5].position.y"
+      v-bind:z="first.pawns[5].position.z"
+      v-on:moved="updatePosition($event, first.pawns[5])"
+    ></piece> 
+
+    <piece
+      v-bind:name="ball.name" v-bind:hand="ball.hand"
+      v-bind:x="ball.position.x"
+      v-bind:y="ball.position.y"
+      v-bind:z="ball.position.z"
+      v-on:moved="updatePosition($event, ball)"
+    ></piece>  
+
+    <piece
+      v-bind:name="second.goal_keeper.name" v-bind:hand="second.goal_keeper.hand"
+      v-bind:x="second.goal_keeper.position.x"
+      v-bind:y="second.goal_keeper.position.y"
+      v-bind:z="second.goal_keeper.position.z"
+      v-on:moved="updatePosition($event, second.goal_keeper)"
+    ></piece>
+    <piece
+      v-bind:name="second.rook.name" v-bind:hand="second.rook.hand"
+      v-bind:x="second.rook.position.x"
+      v-bind:y="second.rook.position.y"
+      v-bind:z="second.rook.position.z"
+      v-on:moved="updatePosition($event, second.rook)"
+    ></piece>
+
+    <piece
+      v-bind:name="second.bishop.name" v-bind:hand="second.bishop.hand"
+      v-bind:x="second.bishop.position.x"
+      v-bind:y="second.bishop.position.y"
+      v-bind:z="second.bishop.position.z"
+      v-on:moved="updatePosition($event, second.bishop)"
+    ></piece>
+
+    <piece
+      v-bind:name="second.knights[0].name" v-bind:hand="second.knights[0].hand"
+      v-bind:x="second.knights[0].position.x"
+      v-bind:y="second.knights[0].position.y"
+      v-bind:z="second.knights[0].position.z"
+      v-on:moved="updatePosition($event, second.knights[0])"
+    ></piece>
+    <piece
+      v-bind:name="second.knights[1].name" v-bind:hand="second.knights[1].hand"
+      v-bind:x="second.knights[1].position.x"
+      v-bind:y="second.knights[1].position.y"
+      v-bind:z="second.knights[1].position.z"
+      v-on:moved="updatePosition($event, second.knights[1])"
+    ></piece>
+
+    <piece
+      v-bind:name="second.pawns[0].name" v-bind:hand="second.pawns[0].hand"
+      v-bind:x="second.pawns[0].position.x"
+      v-bind:y="second.pawns[0].position.y"
+      v-bind:z="second.pawns[0].position.z"
+      v-on:moved="updatePosition($event, second.pawns[0])"
+    ></piece>
+    <piece
+      v-bind:name="second.pawns[1].name" v-bind:hand="second.pawns[1].hand"
+      v-bind:x="second.pawns[1].position.x"
+      v-bind:y="second.pawns[1].position.y"
+      v-bind:z="second.pawns[1].position.z"
+      v-on:moved="updatePosition($event, second.pawns[1])"
+    ></piece>
+    <piece
+      v-bind:name="second.pawns[2].name" v-bind:hand="second.pawns[2].hand"
+      v-bind:x="second.pawns[2].position.x"
+      v-bind:y="second.pawns[2].position.y"
+      v-bind:z="second.pawns[2].position.z"
+      v-on:moved="updatePosition($event, second.pawns[2])"
+    ></piece>
+    <piece
+      v-bind:name="second.pawns[3].name" v-bind:hand="second.pawns[3].hand"
+      v-bind:x="second.pawns[3].position.x"
+      v-bind:y="second.pawns[3].position.y"
+      v-bind:z="second.pawns[3].position.z"
+      v-on:moved="updatePosition($event, second.pawns[3])"
+    ></piece>
+    <piece
+      v-bind:name="second.pawns[4].name" v-bind:hand="second.pawns[4].hand"
+      v-bind:x="second.pawns[4].position.x"
+      v-bind:y="second.pawns[4].position.y"
+      v-bind:z="second.pawns[4].position.z"
+      v-on:moved="updatePosition($event, second.pawns[4])"
+    ></piece>
+    <piece
+      v-bind:name="second.pawns[5].name" v-bind:hand="second.pawns[5].hand"
+      v-bind:x="second.pawns[5].position.x"
+      v-bind:y="second.pawns[5].position.y"
+      v-bind:z="second.pawns[5].position.z"
+      v-on:moved="updatePosition($event, second.pawns[5])"
+    ></piece>
+  </div>
 </div>

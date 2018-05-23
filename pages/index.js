@@ -18,9 +18,8 @@ export default {
     // find chat logs by ID
     console.log(this.$route.params.board_id);
     // boot cycle engine
-    cycle(vm);
   }
-  , methods {
+  , methods : {
   }
 
 }

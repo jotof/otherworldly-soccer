@@ -1,0 +1,27 @@
+@import '../free-board/index.styl';
+
+padding_size = (cell-size / 4)px
+
+.console
+  position relative
+  height 100%
+  padding padding_size
+  .logs
+    font-size 12px
+  .form
+    position absolute
+    left 0
+    right 0
+    bottom padding_size
+    &-name
+      width 15%
+      margin-left padding_size
+    &-text
+      display inline-block
+      margin-left padding_size
+      margin-right padding_size
+      width 50%
+    &-button
+      display inline-block
+      width 15%
+      margin auto
